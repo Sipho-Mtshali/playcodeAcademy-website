@@ -1,9 +1,17 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation()
+
+  // Close the mobile menu on route change to ensure content is visible
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.pathname])
+
+  const closeMenu = () => setIsOpen(false)
   return (
     <header className="bg-slate-900 text-white shadow-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -27,12 +35,12 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-slate-700">
             <nav className="flex flex-col space-y-4">
-              <Link to="/" className="hover:text-teal-400 transition-colors">Home</Link>
-              <Link to="/about" className="hover:text-teal-400 transition-colors">About</Link>
-              <Link to="/programs" className="hover:text-teal-400 transition-colors">Programs</Link>
-              <Link to="/parents" className="hover:text-teal-400 transition-colors">Parents</Link>
-              <Link to="/enroll" className="hover:text-teal-400 transition-colors">Enroll</Link>
-              <Link to="/contact" className="hover:text-teal-400 transition-colors">Contact</Link>
+              <Link to="/" onClick={closeMenu} className="hover:text-teal-400 transition-colors">Home</Link>
+              <Link to="/about" onClick={closeMenu} className="hover:text-teal-400 transition-colors">About</Link>
+              <Link to="/programs" onClick={closeMenu} className="hover:text-teal-400 transition-colors">Programs</Link>
+              <Link to="/parents" onClick={closeMenu} className="hover:text-teal-400 transition-colors">Parents</Link>
+              <Link to="/enroll" onClick={closeMenu} className="hover:text-teal-400 transition-colors">Enroll</Link>
+              <Link to="/contact" onClick={closeMenu} className="hover:text-teal-400 transition-colors">Contact</Link>
             </nav>
           </div>
         )}
