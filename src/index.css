@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --color-teal-500: #14b8a6; /* primary */
+  --color-orange-500: #f97316;
+  --color-yellow-400: #facc15;
+  --color-blue-500: #3b82f6;
+}
+
+html, body, #root {
+  height: 100%;
+}
