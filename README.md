@@ -30,4 +30,22 @@ Edit copy directly in page files under `src/pages/` or update `src/content/conte
 ## SEO
 
 Basic meta tags are in `index.html`. For advanced per-page SEO, add an SEO library once React 19 compatible versions are available.
+
+## Payments
+
+- Update links in `src/pages/Enroll.jsx`:
+  - PayPal: replace `https://www.paypal.com/paypalme/your-handle`
+  - PayFast: replace with your hosted payment link
+  - EFT: set your banking details or link to a PDF
+- Place logos in `public/images/`: `paypal.png`, `payfast.png`, `eft.png`
+
+### Enable PayPal Buttons (optional)
+
+Create a `.env` file in the project root:
+
+```
+VITE_PAYPAL_CLIENT_ID=YOUR_SANDBOX_OR_LIVE_CLIENT_ID
+```
+
+Restart dev server. When set, the Payment page will render PayPal Smart Buttons.
 "# playcodeAcademy-website" 

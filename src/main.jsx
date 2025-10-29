@@ -9,6 +9,7 @@ import Programs from './pages/Programs.jsx'
 import Parents from './pages/Parents.jsx'
 import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
+import Enroll from './pages/Enroll.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: 'programs', element: <Programs /> },
       { path: 'parents', element: <Parents /> },
       { path: 'blog', element: <Blog /> },
+      { path: 'enroll', element: <Enroll /> },
       { path: 'contact', element: <Contact /> },
     ],
   },
